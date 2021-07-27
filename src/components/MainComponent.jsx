@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import  NavAppBar from './header/AppBar'
-import DrawerComponent from './header/Drawer'
-import useStyles from './header/DrawerStyle';
+import DrawerComponent from './header/sidenav/Drawer'
+import useStyles from './header/HeaderStyle';
 import MainContainer from './MainContainer';
 export default function MainComponent() {
     const classes = useStyles()
