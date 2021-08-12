@@ -1,9 +1,35 @@
-import React from 'react' 
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import AddUser from "./users/AddUser/AddUser";
+import UserDetails from "./users/UserDetails";
+import UsersComponent from "./users/UsersComponent";
+import UserProfilePic from "./users/UserProfilePic";
 
-export default function MainContainer({classes}) { 
-    return (
-        <div className={classes.mainContainer}>
-            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi fugit voluptate ut totam cupiditate repellat ad quo ipsum laudantium vitae, vero perferendis iusto iste aliquam obcaecati sequi! Veniam explicabo doloremque cumque repudiandae, corrupti repellendus eos molestiae fugit necessitatibus animi? Odit sapiente soluta fuga provident rerum maiores, aspernatur quae illo aliquid, et dolorum? Perspiciatis laudantium nulla temporibus sunt explicabo aliquam neque tenetur unde. Pariatur, facere et qui maiores repudiandae odit enim cum cupiditate nemo placeat quia rem ipsa! Aperiam assumenda soluta delectus explicabo voluptas, non debitis et ad sint quaerat qui ipsa ea, sunt dolores architecto, unde ex accusantium maxime dolore itaque dolor. Eveniet asperiores ab esse culpa iste sequi sed odit adipisci doloremque dolor odio rerum sunt, eos officia maiores ut dolorem nisi cum facere dolorum dolore accusantium obcaecati aliquam reprehenderit? Dolore consectetur similique doloremque eligendi quaerat nemo, numquam magni itaque placeat animi, et ea deleniti vitae quam facere maxime libero temporibus aspernatur quidem ducimus, enim cupiditate sint magnam blanditiis. Architecto inventore asperiores cum ut impedit reprehenderit! Dolor iste ex ullam alias non totam nesciunt nostrum quibusdam id explicabo debitis obcaecati, itaque, iusto illo, tempore odit quisquam. Praesentium eligendi aperiam quidem ea minima dolorem, facere autem reiciendis ipsa atque numquam ab molestias tenetur, temporibus distinctio et rem recusandae! Tempore veniam ut recusandae? Ipsum, doloribus! Ea quis, corrupti vitae adipisci ab voluptatum sed vero exercitationem. Minus quam dolor placeat recusandae deserunt quidem quos eum, id voluptatem illo vel veniam eos reprehenderit cupiditate officia natus quibusdam nulla reiciendis. Quis magni cum voluptatum voluptates non sed natus quam. Assumenda, delectus. Quasi voluptas explicabo fugit eius deserunt velit dolorum accusantium, asperiores nihil repellendus soluta tenetur! Eveniet esse, officia, impedit vitae quisquam culpa dicta deleniti error laboriosam iure magnam exercitationem atque unde. Perferendis voluptatem accusantium laboriosam vel voluptatum expedita in sit, quaerat mollitia rem illo corrupti quod similique fugit, earum officia eius explicabo eligendi veritatis aspernatur doloremque nihil. Voluptate voluptatem, facere dignissimos labore ipsa consectetur explicabo accusamus qui, laborum nemo saepe esse rerum repudiandae debitis unde dolor odio tenetur blanditiis reiciendis. Culpa, quisquam? Eius ducimus tenetur molestias illo modi est aliquid, voluptas maxime laborum mollitia? Ex distinctio consequatur corporis vitae alias commodi minima maiores exercitationem eaque, rerum fugit porro reprehenderit ullam ea vero quam quo dolor est! Voluptas distinctio sint autem ducimus odio earum neque tenetur, alias hic cupiditate ipsum omnis iusto deleniti, doloribus recusandae esse. Nemo ducimus quod, animi iusto numquam, dignissimos repudiandae fuga aspernatur praesentium at voluptas soluta. Quisquam incidunt vitae quaerat corporis similique perspiciatis et at possimus. Aspernatur quod, cumque ut quaerat tempore aperiam eveniet soluta iure totam nulla aliquid veritatis ipsa possimus similique at sed recusandae, placeat sequi numquam corporis quisquam dicta a corrupti. Praesentium, repellat delectus quae assumenda veniam facilis numquam eaque fuga ipsam aut! Voluptatibus expedita, dignissimos laborum commodi sunt omnis tempora sequi fugiat voluptate dolore maiores, praesentium officia. Autem voluptatibus laborum accusantium esse, inventore et. Aliquam praesentium assumenda voluptate magnam numquam minus excepturi rem nesciunt cupiditate ullam dicta nostrum vitae voluptas fuga, beatae accusamus impedit nisi et consectetur.</h1>
-        </div>
-    )
+export default function MainContainer({ classes }) {
+  return (
+    <div className={classes.mainContainer}>
+      {/* 
+      users 
+      
+      dashboard
+      */}
+      <Switch>
+        <Route exect path="/user/add">
+          <AddUser />
+        </Route>
+        <Route
+          path="/user/:userId"
+          render={(props) => <UserDetails {...props} />}
+        ></Route>
+        <Route
+          path="/profile_pic/:userId"
+          render={(props) => <UserProfilePic />}
+        />
+        <Route
+          path="/users"
+          render={(props) => <UsersComponent {...props} />}
+        />
+      </Switch>
+    </div>
+  );
 }

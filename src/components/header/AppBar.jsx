@@ -1,11 +1,19 @@
-import React from 'react';
-import {AppBar,Toolbar,Typography,Button,IconButton, makeStyles, Hidden } from '@material-ui/core';
+import React from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  makeStyles,
+  Hidden,
+} from "@material-ui/core";
 // import AppBar from '@material-ui/core ';
 // import Toolbar from '@material-ui/core/Toolbar';
 // import Typography from '@material-ui/core/Typography';
 // import Button from '@material-ui/core/Button';
 // import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from "@material-ui/icons/Menu";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,25 +27,33 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavAppBar({setDrawerOpen }) {
+export default function NavAppBar({ setDrawerOpen }) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
-          <Hidden smUp>
-          <IconButton edge="start" className={classes.menuButton}  color="inherit" aria-label="menu" onClick={() => {
-            setDrawerOpen(true)
-            console.log("menu clicked")
-          }} >
-            <MenuIcon />
-          </IconButton>
+          <Hidden mdUp>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+              onClick={() => {
+                setDrawerOpen(true);
+                console.log("menu clicked");
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
           </Hidden>
           <Typography variant="h6" className={classes.title}>
-            News
+            Betikishadi
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" variant="outlined">
+            Login
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
